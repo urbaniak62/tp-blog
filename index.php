@@ -9,7 +9,22 @@
     </head>
 
     <body>
+<<<<<<< HEAD:index.php
       <h1>MON PREMIER BLOG</h1>
+=======
+      <div class="container">
+        <h1>MINI-CHAT</h1>
+
+      <form class="" action="minChat_post.php" method="post">
+        <label for="pseudo">pseudo</label>
+        <input type="text" name="pseudo" value="">
+        <label for="message">message</label>
+        <textarea name="message" rows="30" cols="50">
+
+        </textarea>
+        <input type="submit" name="envoyer" value="envoyer">
+      </form>
+>>>>>>> 47d32bae98d7f42bb5db23fda7bb6ab53351b3f8:miniChat.php
     <?php
     try
     {
@@ -23,6 +38,7 @@
     $req=$bdd->query('SELECT *  FROM billet ORDER BY id DESC');
     while($blog=$req->fetch()){
         ?>
+<<<<<<< HEAD:index.php
 
 
         <br>
@@ -32,6 +48,18 @@
           <p><em><?php echo $blog['contenu']; ?></em></p>
           <a href="commentaire.php?billet=<?php echo $donnees['id']; ?>">Commentaires</a>
         </div>
+=======
+          <fieldset>
+            <hr>
+            <p>pseudo : <?php echo $req['pseudo']; ?></p>
+            <p>Message : <?php echo $req['message']; ?></p>
+            <hr>
+          </fieldset>
+
+
+
+      </div>
+>>>>>>> 47d32bae98d7f42bb5db23fda7bb6ab53351b3f8:miniChat.php
 
 
       <?php

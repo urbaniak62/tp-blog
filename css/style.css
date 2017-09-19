@@ -1,6 +1,7 @@
 body{
 	width:100%;
 	color:black;
+<<<<<<< HEAD
 	margin: 0 auto;
 }
 .container p{
@@ -10,4 +11,17 @@ body{
 .container span{
 	border: 1px solid black;
 	padding: 10px;
+=======
+}
+.container{
+
+}
+fieldset{
+	width: 70%;
+	margin: 50px auto;
+	background-color: #cfbebe;
+}
+.box{
+	margin-top: 50px;
+>>>>>>> 47d32bae98d7f42bb5db23fda7bb6ab53351b3f8
 }
