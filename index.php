@@ -9,43 +9,34 @@
     </head>
 
     <body>
-      <header>
-        <h1>MINI-CHAT</h1>
-      </header>
-      <form class="" action="minChat_post.php" method="post">
-        <label for="pseudo">pseudo</label>
-        <input type="text" name="pseudo" value="">
-        <label for="message">message</label>
-        <textarea name="message" rows="30" cols="50">
-
-        </textarea>
-        <input type="submit" name="envoyer" value="envoyer">
-      </form>
+      <h1>MON PREMIER BLOG</h1>
     <?php
     try
     {
-    $bdd = new PDO('mysql:host=localhost;dbname=miniChat;charset=utf8', 'root', 'chniak24dec78-',
+    $bdd = new PDO('mysql:host=localhost;dbname=blog;charset=utf8', 'root', 'chniak24dec78-',
      array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
     }
     catch (Exception $e)
     {
           die('Erreur : ' . $e->getMessage());
     }
-
-      $minichat= $bdd ->query('SELECT * FROM miniChat ORDER BY id DESC LIMIT 0,20 ');
-        while ($req = $minichat->fetch()) {
+    $req=$bdd->query('SELECT *  FROM billet ORDER BY id DESC');
+    while($blog=$req->fetch()){
         ?>
-        <div class="box">
-          <p>pseudo : <?php echo $req['pseudo']; ?></p>
-          <p>Message : <?php echo $req['message']; ?></p><hr>
 
+
+        <br>
+        <hr>
+        <div class="container">
+          <p><?php echo $blog['titre'] ." le : " .  $blog['date_creation']; ?></p>
+          <p><em><?php echo $blog['contenu']; ?></em></p>
+          <a href="commentaire.php?billet=<?php echo $donnees['id']; ?>">Commentaires</a>
         </div>
-
 
 
       <?php
         }
-      $minichat->closeCursor();
+      $req->closeCursor();
      ?>
       <footer>
 
