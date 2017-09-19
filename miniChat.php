@@ -9,9 +9,9 @@
     </head>
 
     <body>
-      <header>
+      <div class="container">
         <h1>MINI-CHAT</h1>
-      </header>
+
       <form class="" action="minChat_post.php" method="post">
         <label for="pseudo">pseudo</label>
         <input type="text" name="pseudo" value="">
@@ -35,12 +35,16 @@
       $minichat= $bdd ->query('SELECT * FROM miniChat ORDER BY id DESC LIMIT 0,20 ');
         while ($req = $minichat->fetch()) {
         ?>
-        <div class="box">
-          <p>pseudo : <?php echo $req['pseudo']; ?></p>
-          <p>Message : <?php echo $req['message']; ?></p><hr>
+          <fieldset>
+            <hr>
+            <p>pseudo : <?php echo $req['pseudo']; ?></p>
+            <p>Message : <?php echo $req['message']; ?></p>
+            <hr>
+          </fieldset>
 
-        </div>
 
+
+      </div>
 
 
       <?php

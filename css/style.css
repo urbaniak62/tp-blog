@@ -1,3 +1,15 @@
 body{
+	width:100%;
 	color:black;
+}
+.container{
+
+}
+fieldset{
+	width: 70%;
+	margin: 50px auto;
+	background-color: #cfbebe;
+}
+.box{
+	margin-top: 50px;
 }

@@ -1,3 +1,6 @@
+
+
+
 <?php
 try
 {
@@ -8,7 +11,6 @@ catch (Exception $e)
 {
       die('Erreur : ' . $e->getMessage());
 }
-
 if (isset($_POST['pseudo']) && isset($_POST['message'])) {
   $pseudo =$_POST['pseudo'];
   $message=$_POST['message'];
@@ -19,7 +21,5 @@ if (isset($_POST['pseudo']) && isset($_POST['message'])) {
     'message'=>$message,
   ));
 }
-
-
  header('Location: miniChat.php');
  ?>
